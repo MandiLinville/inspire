@@ -4,40 +4,72 @@
 	<meta charset="UTF-8">
 	<title>Inspire</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Give+You+Glory' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body id="body">
+
+	<div id="image"></div>
 	<div id="weather">
-		{{weather}}
+		{{weather.name}}
+		<div @click="toggle" style="cursor:pointer"> {{displayTemp}}</div>
+</div>
+
+<center>
+	<div id="clock" class="container">
+		<h1>{{digitalClock}}</h1>
 	</div>
+</center>
 
-	<div id="quote">
+<div id="quote">
+	"{{quote.quote}}" - {{quote.author}}
+</div>
 
+
+<div id="todo">
+
+	<form @submit.prevent="submitTodo(currentTodo)">
+		<input type="text" v-model="currentTodo">
+	</form>
+
+	<div class="todos">
+		<ul>
+			<li v-for="(task, i) in todos" :class="{completed:task.completed}" @click="completedTodo(task)">
+				{{task}} <button type="button" @click="removeTodo(task)">Completed!</button>
+			</li>
+		</ul>
 	</div>
-
-	<div id="todo">
-
-	</div>
+</div>
 
 
 
+</div>
 
-		<!--JS Libraries-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-	<!--Initialize App-->
-	<script src="app/init.js"></script>
-	<script src="app/components/weather/weather-service.js"></script>
-	<script src="app/components/image/image-service.js"></script>
-	<script src="app/components/quote/quote-service.js"></script>
-	<script src="app/components/todo/todo-service.js"></script>
 
-	<!--Load your scripts below-->
-	<script src="app/components/weather/weather-controller.js"></script>
-	<script src="app/components/image/image-controller.js"></script>
-	<script src="app/components/quote/quote-controller.js"></script>
-	<script src="app/components/todo/todo-controller.js"></script>
+
+
+
+
+<!--JS Libraries-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!--Initialize App-->
+<script src="app/init.js"></script>
+<script src="app/components/weather/weather-service.js"></script>
+<script src="app/components/image/image-service.js"></script>
+<script src="app/components/quote/quote-service.js"></script>
+<script src="app/components/todo/todo-service.js"></script>
+
+<!--Load your scripts below-->
+<script src="app/components/weather/weather-controller.js"></script>
+<script src="app/components/image/image-controller.js"></script>
+<script src="app/components/quote/quote-controller.js"></script>
+<script src="app/components/todo/todo-controller.js"></script>
+<script src="app/components/clock.js"></script>
 
 </body>
 

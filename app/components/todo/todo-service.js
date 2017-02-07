@@ -13,6 +13,7 @@ function TodoService(){
 	this.saveTodos =  function(todos){
 				//^^^ Less typical but todos should always be the entire array
 		localStorage.setItem('todo', JSON.stringify(todos));
-		console.log('Todo Data Saved:', todos);
+        console.log('Todo Data Saved:', todos);
 	}
 }
+

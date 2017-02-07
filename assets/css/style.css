@@ -1,0 +1,23 @@
+.clock{
+    font-size: 100px;
+    color: mediumturquoise;
+    margin:2em 0;
+}
+
+.container{
+    vertical-align: middle;
+}
+
+#quote{
+    font-family: 'Give You Glory', cursive;
+    font-size: 33px
+}
+
+#body{
+    background-size: cover;
+    color: #fff;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+    /*font-family: 'Black Ops One', cursive;*/
