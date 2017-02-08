@@ -10,7 +10,8 @@
 		el: '#todo',
 		data: {
 			todos: [],
-			currentTodo: ''
+			currentTodo: '',
+			todoNumber: 0
 		},
 		mounted: function () {
 			todoService.getTodos(this.setTodos)
@@ -19,6 +20,7 @@
 			submitTodo() {
 				this.todos.push(this.currentTodo)
 				this.saveTodos()
+				this.todoNumber ++
 				completed: false
 			},
 			saveTodos() {
@@ -26,10 +28,12 @@
 			},
 			setTodos(todos) {
 				this.todos = todos;
+				this.todoNumber = todos.length
 			},
 			removeTodo(task) {
 				var i = this.todos.indexOf(task)
 				this.todos.splice(i, 1)
+				this.todoNumber--
 			},
 			completedTodo(currentTodo) {
 				currentTodo.completed = !currentTodo.completed

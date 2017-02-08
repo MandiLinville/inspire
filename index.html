@@ -23,15 +23,14 @@
 	</div>
 </center>
 
-<div id="quote">
-	"{{quote.quote}}" - {{quote.author}}
-</div>
 
 
 <div id="todo">
+	<h3> ToDo List </h3>
+	<h5> You have {{todoNumber}} todos!</h5>
 
 	<form @submit.prevent="submitTodo(currentTodo)">
-		<input type="text" v-model="currentTodo">
+		<input type="text" v-model="currentTodo" placeholder = "add todo items">
 	</form>
 
 	<div class="todos">
@@ -43,6 +42,10 @@
 	</div>
 </div>
 
+<div id="quote" v-on:mouseover= "toggle" style="cursor:pointer"> <center>
+	"{{quote.quote}}"</center>
+	<div  v-if="displayAuthor"> {{quote.author}}</div>
+</div>
 
 
 </div>

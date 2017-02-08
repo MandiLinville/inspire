@@ -23,11 +23,11 @@
 		computed: {
 			degreesC: function () {
 				if (!this.weather.main) return;
-				return this.weather.main.temp - 273.15 + ' degrees celsius'
+				return Math.floor(this.weather.main.temp - 273.15) + ' degrees celsius'
 			},
 			degreesF: function () {
 				if (!this.weather.main) return;
-				return (this.weather.main.temp - 273.15) * 9 / 5 + 32 + ' degrees fahrenheit'
+				return Math.floor((this.weather.main.temp - 273.15) * 9 / 5 + 32) + ' degrees fahrenheit'
 			},
 			displayTemp: function(){
 				if(this.displayC) return this.degreesC;
