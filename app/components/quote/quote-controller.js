@@ -13,7 +13,6 @@
 			displayAuthor: false
 		},
 		mounted: function () {
-			debugger
 			quoteService.getQuote(this.setQuote)
 		},
 		methods: {
