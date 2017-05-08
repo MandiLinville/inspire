@@ -21,7 +21,7 @@
 				this.todos.push(this.currentTodo)
 				this.saveTodos()
 				this.todoNumber ++
-				completed: false
+				completed: false //why is this red?
 			},
 			saveTodos() {
 				todoService.saveTodos(this.todos)
@@ -40,4 +40,4 @@
 			}
 		}
 	})
-} ())
+} ()) 
